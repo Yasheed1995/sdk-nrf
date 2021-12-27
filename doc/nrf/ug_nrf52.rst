@@ -149,7 +149,7 @@ To start developing, check out the :ref:`esb_prx_ptx` sample.
 Gazell
 ======
 
-.. include:: ug_gzll.rst
+.. include:: ug_gz.rst
    :start-after: gzll_intro_start
    :end-before: gzll_intro_end
 

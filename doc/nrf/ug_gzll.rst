@@ -7,14 +7,7 @@ Gazell Link Layer
    :local:
    :depth: 2
 
-.. gzll_intro_start
-
-Gazell is a protocol for setting up a robust wireless link between a single Host and up to eight Devices in a star network topology.
-It is designed to minimize power consumption in power-sensitive wireless desktop products and is also suitable for a range of other wireless applications.
-
-.. gzll_intro_end
-
-To minimize the power consumption of the power-sensitive peripheral devices, Gazell uses the central hub (host side) with its more relaxed power constraints to keep the link open while the peripheral devices can sleep and save on power consumption.
+To minimize the power consumption of the power-sensitive peripheral devices, Gazell uses the central hub (Host side) with its more relaxed power constraints to keep the link open while the peripheral devices can sleep and save on power consumption.
 A typical example of this is a wireless mouse communicating with a USB dongle that is inserted into a computer.
 
 Gazell provides a switching and synchronization scheme that reduces interference and provides wireless coexistence features, enabling high throughput and low latency.
@@ -22,7 +15,7 @@ Gazell provides a switching and synchronization scheme that reduces interference
 Features
 ********
 
-Gazell provides the following features:
+Gazell Link Layer provides the following features:
 
 * Support for star network topology with one Host and up to eight Devices.
 * Bidirectional data transfer between each Host and Device.
@@ -39,7 +32,8 @@ Gazell provides the following features:
 * Capability to control the RF front-end module.
 * Generates transmission statistics for each RF channel.
 
-.. _ug_gzll_configuration:
+
+.. _gzll_glue_configuration:
 
 Configuration
 *************
@@ -50,10 +44,11 @@ To enable the Gazell support in the |NCS|, set the following Kconfig options:
 * :kconfig:`CONFIG_CLOCK_CONTROL_NRF` - This option enables the nRF5 HFCLK controller support.
 * :kconfig:`CONFIG_GAZELL` - This option enables the :ref:`gzll_glue` module.
 
+
 .. _ug_gzll_resources:
 
-Resources
-*********
+Resources required
+******************
 
 Gazell uses a fixed set of peripheral resources in the nRF5 SoC.
 To ensure correct operation, Gazell requires exclusive access to the following resources:
@@ -70,7 +65,7 @@ The radio and timer interrupt handlers should run at priority level 0 (highest p
 To avoid blocking Gazell operations, applications can run at priority level 2 or higher.
 
 You can customize Gazell at runtime for a range of different applications.
-See the :ref:`nrfxlib:gzll_api` for a list of configuration functions as well as the default and constant parameters.
+See the :ref:`nrfxlib:gzll` and :ref:`nrfxlib:gzll_api` for a list of configuration functions as well as the default and constant parameters.
 
 .. note:
    Editing the header file containing the default and constant parameters does not change their value when compiling a new project.
@@ -108,7 +103,7 @@ Gazell automatically notifies the application when a packet is received.
 
 To set up a Gazell application, do the following:
 
-* Initialize GZLL glue code using :c:func:`gzll_glue_init()`.
+* Initialize Gazell Link Layer glue code using :c:func:`gzll_glue_init()`.
 * Initialize Gazell using :c:func:`nrf_gzll_init()` and choose either Host or Device.
 * Reconfigure Gazell's default parameters.
   At a minimum, reconfigure the addresses and channels to avoid interfering with other Gazell networks.

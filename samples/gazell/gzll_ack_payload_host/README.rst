@@ -1,34 +1,23 @@
-.. _gzll_ack_payload:
+.. _gzll_ack_payload_host:
 
-Gazell ACK Payload
-##################
+Gazell ACK Payload Host
+#######################
 
 .. contents::
    :local:
    :depth: 2
 
-Overview
-********
-
-This sample shows basic Gazell communication and demonstrates how to send payloads and acknowledgments.
-It consists of two applications, one running on the device and one running on the host.
-
-Device
-======
-
-A Device sends a packet and adds a new packet to the TX queue every time it receives an ACK from Host.
-Before adding a packet to the TX queue, the contents of the buttons is copied to the first payload byte (byte 0).
-When the Device receives an ACK, the contents of the first payload byte of the ACK are output to LEDs.
-
-Host
-====
-
-A Host listens for a packet and sends an ACK when it has received the packet.
-The contents of the first payload byte of the received packet is output to LEDs.
-The contents of buttons are sent in the first payload byte (byte 0) of the ACK packet.
+This sample shows basic Gazell communication and demonstrates how to send packets with payloads and acknowledgments.
+It consists of two Gazell nodes, one running on the Device and one running on the Host.
+You must follow the instructions and use of files from this page, and the :ref:`gzll_ack_payload_device` sample.
 
 Requirements
 ************
+
+.. note::
+   You must follow the steps from and include the :ref:`gzll_ack_payload_device` sample in addition to this sample.
+
+.. gzll_ack_sample_requirements_start
 
 The sample supports the following development kits:
 
@@ -37,6 +26,36 @@ The sample supports the following development kits:
    :rows: nrf52840dk_nrf52840, nrf52833dk_nrf52833, nrf52dk_nrf52832
 
 You can use any two of the development kits listed above and mix different development kits.
+
+.. gzll_ack_sample_requirements_end
+
+
+.. gzll_ack_sample_overview_start
+
+Overview
+********
+
+The sample uses the :ref:`gzll` library to exchange packets with payload in two directions.
+It consists of two applications, a Device and a Host.
+
+* Device
+   A Device sends a packet and adds a new packet to the TX queue every time it receives an ACK from Host.
+   Before adding a packet to the TX queue, the contents of the buttons are copied to the first payload byte (byte 0).
+   When the Device receives an ACK, the contents of the first payload byte of the ACK are output to the LEDs.
+
+* Host
+   A Host listens for a packet and sends an ACK when it has received the packet.
+   The contents of the first payload byte of the received packet is output to LEDs.
+   The contents of buttons are sent in the first payload byte (byte 0) of the ACK packet.
+
+The Device transmits packets with its buttons state and the Host acknowledges all successfully received packets from the Device and adds its buttons state in the ACK packets it transmits.
+Both applications display the peer's temporary buttons state on their LEDs.
+You can use this sample to enable simple, bidirectional data exchange over the Gazell protocol between two devices.
+
+.. gzll_ack_sample_overview_end
+
+
+.. gzll_ack_sample_ui_start
 
 User interface
 **************
@@ -48,6 +67,11 @@ LED 1-4:
 Button 1-4:
    The button pressed state bitmask is sent to the other kit.
    A button pressed is sent as 0 and a button released is sent as 1.
+
+.. gzll_ack_sample_ui_end
+
+
+.. gzll_ack_sample_building_start
 
 Building and running
 ********************
@@ -72,6 +96,11 @@ After programming the Device sample on one of the development kits and the Host 
    See :ref:`putty` for the required settings.
 #. Observe the logging output for both kits.
 
+.. gzll_ack_sample_building_end
+
+
+.. gzll_ack_sample_dependencies_start
+
 Dependencies
 ************
 
@@ -92,3 +121,5 @@ It uses the following Zephyr libraries:
 
   * ``include/kernel.h``
   * ``include/irq.h``
+
+.. gzll_ack_sample_dependencies_end
