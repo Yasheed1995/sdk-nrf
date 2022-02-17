@@ -256,13 +256,13 @@ void start_execute(void)
 {
 	int err;
 
-	LOG_INF("Serial LTE Modem");
+	LOG_INF("Serial Brocere LTE Modem");
 
 	/* Init and load settings */
 	err = slm_settings_init();
 	if (err) {
 		LOG_ERR("Failed to init slm settings: %d", err);
-		return;
+		return;  
 	}
 
 	/* Post-FOTA handling */

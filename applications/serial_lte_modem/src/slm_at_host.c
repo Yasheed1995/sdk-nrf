@@ -207,7 +207,7 @@ int poweroff_uart(void)
 
 	uart_rx_disable(uart_dev);
 	k_sleep(K_MSEC(100));
-	err = pm_device_action_run(uart_dev, PM_DEVICE_ACTION_SUSPEND);
+	// err = pm_device_action_run(uart_dev, PM_DEVICE_ACTION_SUSPEND);
 	if (err) {
 		LOG_ERR("Can't suspend uart: %d", err);
 	}
@@ -219,7 +219,7 @@ int poweron_uart(void)
 {
 	int err;
 
-	err = pm_device_action_run(uart_dev, PM_DEVICE_ACTION_RESUME);
+	// err = pm_device_action_run(uart_dev, PM_DEVICE_ACTION_RESUME);
 	if (err == -EALREADY) {
 		/* Already on, no action */
 		return 0;
@@ -786,7 +786,7 @@ int slm_at_host_init(void)
 		return -EFAULT;
 	}
 	/* Power on UART module */
-	pm_device_action_run(uart_dev, PM_DEVICE_ACTION_RESUME);
+	// pm_device_action_run(uart_dev, PM_DEVICE_ACTION_RESUME);
 	err = uart_receive();
 	if (err) {
 		return -EFAULT;
@@ -834,7 +834,7 @@ void slm_at_host_uninit(void)
 	/* Power off UART module */
 	uart_rx_disable(uart_dev);
 	k_sleep(K_MSEC(100));
-	err = pm_device_action_run(uart_dev, PM_DEVICE_ACTION_SUSPEND);
+	// err = pm_device_action_run(uart_dev, PM_DEVICE_ACTION_SUSPEND);
 	if (err) {
 		LOG_WRN("Can't suspend uart: %d", err);
 	}

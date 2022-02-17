@@ -32,6 +32,12 @@ config SLM_EXTERNAL_XTAL
 	bool "Use external XTAL for UARTE"
 	default y
 
+# config SLM_BROCERE
+# 	int "enable brocere app"
+# 	default 1
+# 	help
+# 	  Enable brocere app
+
 #
 # Inter-Connect
 #
@@ -120,6 +126,8 @@ config SLM_DATAMODE_SILENCE
 	default 1
 	help
 	  Exit data mode after the specified time (in seconds) of UART silence
+
+
 
 #
 # Configurable services

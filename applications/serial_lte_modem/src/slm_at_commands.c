@@ -47,6 +47,10 @@
 #include "slm_at_gpio.h"
 #endif
 
+#if defined(CONFIG_SLM_MQTTC)
+#include "slm_at_brocere_app.h"
+#endif
+
 LOG_MODULE_REGISTER(slm_at, CONFIG_SLM_LOG_LEVEL);
 
 /* This delay is necessary for at_host to send response message in low baud rate. */
@@ -530,6 +534,10 @@ static struct slm_at_cmd {
 #if defined(CONFIG_SLM_GPIO)
 	{"AT#XGPIOCFG", handle_at_gpio_configure},
 	{"AT#XGPIO", handle_at_gpio_operate},
+#endif
+
+#if defined(CONFIG_SLM_MQTTC)
+	{"AT#XBTEST", handle_at_test},
 #endif
 
 };

@@ -220,11 +220,7 @@ static void mqtt_thread_fn(void *arg1, void *arg2, void *arg3)
 	ARG_UNUSED(arg3);
 
 	fds.fd = client.transport.tcp.sock;
-#if defined(CONFIG_MQTT_LIB_TLS)
-	if (client.transport.type == MQTT_TRANSPORT_SECURE) {
-		fds.fd = client.transport.tls.sock;
-	}
-#endif
+
 	fds.events = POLLIN;
 	while (true) {
 		if (!ctx.connected) {
@@ -574,6 +570,8 @@ int handle_at_mqtt_publish(enum at_cmd_type cmd_type)
 		pub_msg[0] = '\0';
 		if (at_params_type_get(&at_param_list, 2) == AT_PARAM_TYPE_STRING) {
 			err = util_string_get(&at_param_list, 2, pub_msg, &msg_sz);
+			sprintf(pub_msg, "%s", "{\"rawdatalist\":[{\"id\":\"04700769015\",\"manufacturerId\":\"brocere\",\"rawdataTime\":\"2022-02-15 10:43:58\",\"data\":[{\"sensor\":\"temp\",\"value\":[\"25\"]}]}]}");
+			printk("publish msg: %s\n", pub_msg);
 			if (err) {
 				return err;
 			}
