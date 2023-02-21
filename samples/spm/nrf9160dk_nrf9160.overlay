@@ -10,3 +10,6 @@
 &pwm3 {
 	status = "okay";
 };
+&uart1 {
+    status = "disabled";
+};

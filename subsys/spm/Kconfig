@@ -296,11 +296,11 @@ config SPM_NRF_DPPIC_NS
 	bool "DPPIC is Non-Secure"
 	default y
 
-if SOC_NRF9160
 config SPM_NRF_WDT_NS
 	bool "WDT is Non-Secure"
 	default y
 
+if SOC_NRF9160
 config SPM_NRF_PDM_NS
 	bool "PDM is Non-Secure"
 	default y

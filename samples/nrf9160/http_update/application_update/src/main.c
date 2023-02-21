@@ -63,6 +63,10 @@ void main(void)
 
 	printk("HTTP application update sample started\n");
 
+    // set system mode to NB
+	// lte_lc_system_mode_set(5, 0);
+    
+
 	err = nrf_modem_lib_init(NORMAL_MODE);
 	if (err) {
 		printk("Failed to initialize modem library!");
