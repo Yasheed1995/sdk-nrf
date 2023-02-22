@@ -1,0 +1,70 @@
+Copyright (c) 2019 - 2021, Nordic Semiconductor ASA
+All rights reserved.
+
+1.  By downloading this software, you acknowledge that all right, title and interest in and to the
+    software and the proprietary information and all intellectual property rights with respect
+    thereto are and at all times shall remain with Nordic Semiconductor ASA, its contributors and
+    third party licensors. No right, title or interest in or to the software, the proprietary
+    information and all intellectual property rights with respect thereto are granted under this
+    License, and you acknowledge that Nordic Semiconductor ASA’s, its contributors’ and third party
+    licensors’ software, and proprietary information shall remain the property of and proprietary to
+    Nordic Semiconductor ASA, its contributors and third party licensors respectively.
+
+2.  Redistributions in binary form is allowed but only as embedded into Nordic Semiconductor ASA
+    nRF91-series of integrated circuit in a product or a software update for such product. You may
+    not modify, re-link or rebuild the software or the proprietary information.
+
+3.  Neither the name of Nordic Semiconductor ASA nor the names of its Contributors or third party
+    licensors may be used to endorse or promote products derived from this software without specific
+    prior written permission.
+
+4.  This software must only be used with Nordic Semiconductor ASA’s nRF91 integrated circuit.
+
+5.  Any software provided under this license must not be reverse engineered, decompiled, modified
+    and/or disassembled.
+
+6.  You are only allowed to use the software and proprietary information to develop your own IoT
+    end-user products. You are not allowed to redistribute any of the software or proprietary
+    information, except to the extent the software or any proprietary information is included in
+    your end-user IoT product.  You shall ensure that your licensees and customers of your end-user
+    product may not be able to use or link with your product or any components of your product for
+    the purposed of further development of your product (including, without limitation, the
+    development of any products, software, code, technology, firmware or hardware).
+
+7.  If you are a U.S. Government unit or agency subject to the DFARs (the “DOD”), the software is
+    classified as “Commercial Computer Programs” and the documentation included in or with the
+    software are classified as “Commercial Programs Documentation” and, pursuant to the DFARs
+    Section 227.7202, the U.S. Government is acquiring a license to the software and the documentation
+    in accordance with the terms of this Agreement. If any of the software are being provided to
+    any unit or agency of the U.S. Government other than the DOD or if you are a U.S. Government
+    Unit or agency other than DOD, the software is classified as “Commercial Computer Programs”
+    and any documentation included in or with the software is classified as “Commercial Items”
+    and pursuant to FAR Section 12.212, the U.S. Government is acquiring a license to the software
+    and the documentation in accordance with the terms of this Agreement.
+
+8.  You hereby warrant that the software will only be provided, used, exported and re-exported in
+    compliance with the laws of the United States, including without limitation all Export
+    Administration Regulations of the United States Department of Commerce, and that you bear
+    responsibility for any violation of such laws and regulations. You certify that you are not
+    and will not allow access to the software or the proprietary information to any entity or
+    individual in the (i) List of Specially Designated Nationals or Consolidated Sanctions List
+    administered by the US Office of Foreign Assets Control, (ii) any entity or individual located
+    in or part of any government of any country covered by a United States general trade embargo,
+    (III) any entity owned 50% or more either individually or in the aggregate by any of the
+    foregoing individuals or entities and (iv) any entity or individual in the Denied Persons List,
+    Entity List or Unverified List administered by the US Bureau of Industry and Security or in a
+    successor to any of these lists or any similar additional list. If you become any of the foregoing,
+    you shall (i) immediately inform Nordic Semiconductor ASA of such status and (ii) your rights to
+    use the software and the proprietary information shall automatically terminate.
+
+THIS SOFTWARE IS PROVIDED "AS IS" BY NORDIC SEMICONDUCTOR ASA, ITS CONTRIBUTORS AND THIRD PARTY LICENSORS AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL NORDIC SEMICONDUCTOR ASA,
+CONTRIBUTORS OR THIRD PARTY LICENSORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+IF THIS WAIVER OF LIABILTIY FOR ANY REASON IS DISCARDED BY ANY JURISDICTION, NORDIC SEMICONDUCTOR ASA, ITS
+CONTRIBUTORS AND THIRD PARTY LICENSORS’ LIABILITY SHALL IN NO CIRCUMSTANCE EXCEED AN AGGREGATE OF 50 USD FOR
+ALL CLAIMS.

@@ -31,5 +31,5 @@ doc/nrf/_samples/
 doc/*_warnings.txt
 doc/*_doc.log
 
-ext/lib/bin/supl
-ext/lib/bin/libsupl.zip
+#ext/lib/bin/supl
+#ext/lib/bin/libsupl.zip
