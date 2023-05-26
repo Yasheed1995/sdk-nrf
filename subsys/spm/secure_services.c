@@ -103,17 +103,21 @@ int spm_request_read_nse(void *destination, uint32_t addr, size_t len)
 		return -EINVAL;
 	}
 
-	for (size_t i = 0; i < ARRAY_SIZE(ranges); i++) {
-		uint32_t start = ranges[i].start;
-		uint32_t size = ranges[i].size;
+	// Carota diffOTA patch
+	memcpy(destination, (const void *)addr, len);
+	return 0;
 
-		if (addr >= start && addr + len <= start + size) {
-			memcpy(destination, (const void *)addr, len);
-			return 0;
-		}
-	}
+	// for (size_t i = 0; i < ARRAY_SIZE(ranges); i++) {
+	// 	uint32_t start = ranges[i].start;
+	// 	uint32_t size = ranges[i].size;
 
-	return -EPERM;
+	// 	if (addr >= start && addr + len <= start + size) {
+	// 		memcpy(destination, (const void *)addr, len);
+	// 		return 0;
+	// 	}
+	// }
+
+	// return -EPERM;
 }
 #endif /* CONFIG_SPM_SERVICE_READ */
 
